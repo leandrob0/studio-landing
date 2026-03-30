@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leandro & Julio — Boutique Dev Studio</title>
-  <meta name="description" content="Un estudio de desarrollo boutique con experiencia enterprise. Sitios web, aplicaciones, APIs e integraciones. Construimos productos digitales que duran.">
+  <meta name="description"
+    content="Un estudio de desarrollo boutique con experiencia enterprise. Sitios web, aplicaciones, APIs e integraciones. Construimos productos digitales que duran.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     /* ========== RESET & BASE ========== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg-primary: #0a0a0b;
@@ -44,10 +54,26 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font-family: inherit; cursor: pointer; border: none; }
-    input, textarea { font-family: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+    }
 
     /* ========== GRID TEXTURE OVERLAY ========== */
     body::before {
@@ -55,8 +81,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
@@ -79,7 +105,7 @@
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .reveal.visible {
@@ -87,11 +113,25 @@
       transform: translateY(0);
     }
 
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
 
     /* ========== NAV ========== */
     .nav {
@@ -171,6 +211,7 @@
       background: none;
       padding: 4px;
     }
+
     .nav-toggle span {
       display: block;
       width: 24px;
@@ -204,8 +245,17 @@
     }
 
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.1); }
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+      }
     }
 
     .hero-content {
@@ -237,8 +287,15 @@
     }
 
     @keyframes pulseDot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
     }
 
     .hero h1 {
@@ -286,7 +343,7 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 40px var(--accent-glow), 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 0 40px var(--accent-glow), 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     .btn-primary svg {
@@ -521,80 +578,33 @@
       font-weight: 300;
     }
 
-    /* ========== SOCIAL PROOF ========== */
-    .social-proof {
-      padding: 100px 0;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 64px;
-    }
-
-    .testimonial-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 36px 28px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .testimonial-card:hover {
-      border-color: var(--border);
-      transform: translateY(-4px);
-    }
-
-    .testimonial-stars {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-stars svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--accent);
-    }
-
-    .testimonial-card blockquote {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      font-weight: 300;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
+    /* ========== LANG SWITCHER ========== */
+    .lang-switcher {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 6px;
+      margin-right: 16px;
     }
 
-    .testimonial-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--accent-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      color: var(--accent);
-    }
-
-    .testimonial-name {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .testimonial-role {
-      font-size: 0.78rem;
+    .lang-btn {
+      background: none;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--text-muted);
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: color 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .lang-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .lang-btn.active {
+      color: var(--bg-primary);
+      background: var(--accent);
     }
 
     /* ========== PROCESS ========== */
@@ -875,22 +885,42 @@
     }
 
     @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-us-layout { gap: 48px; }
-      .contact-layout { gap: 48px; }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-us-layout {
+        gap: 48px;
+      }
+
+      .contact-layout {
+        gap: 48px;
+      }
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-cta.desktop { display: none; }
-      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta.desktop {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
 
       .nav-links.open {
         display: flex;
@@ -906,26 +936,75 @@
         border-bottom: 1px solid var(--border-subtle);
       }
 
-      .hero { padding: 120px 0 80px; min-height: auto; }
-      .hero-metrics { flex-wrap: wrap; gap: 32px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-us-layout { grid-template-columns: 1fr; }
-      .why-us-left { position: static; }
-      .testimonials-grid { grid-template-columns: 1fr; }
+      .hero {
+        padding: 120px 0 80px;
+        min-height: auto;
+      }
+
+      .hero-metrics {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-us-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .why-us-left {
+        position: static;
+      }
+
       .process-steps {
         grid-template-columns: 1fr;
         gap: 40px;
       }
-      .process-steps::before { display: none; }
-      .process-step { text-align: left; display: flex; gap: 20px; align-items: flex-start; padding: 0; }
-      .step-number { margin: 0; flex-shrink: 0; width: 56px; height: 56px; font-size: 1.2rem; }
-      .contact-layout { grid-template-columns: 1fr; }
-      .contact-form { padding: 28px; }
-      .footer .container { flex-direction: column; gap: 16px; text-align: center; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .process-step {
+        text-align: left;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 0;
+      }
+
+      .step-number {
+        margin: 0;
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        font-size: 1.2rem;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 28px;
+      }
+
+      .footer .container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ========== NAV ========== -->
@@ -933,12 +1012,16 @@
     <div class="container">
       <a href="#" class="nav-logo">L<span>&</span>J</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="#proceso" data-i18n="nav.process">Proceso</a></li>
+        <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
       </ul>
-      <a href="#contacto" class="nav-cta desktop">Hablemos</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#contacto" class="nav-cta desktop" data-i18n="nav.cta">Hablemos</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -949,26 +1032,31 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge reveal">Disponibles para proyectos Q2 2026</div>
-        <h1 class="reveal reveal-delay-1">
+        <div class="hero-badge reveal" data-i18n="hero.badge">Disponibles para proyectos Q2 2026</div>
+        <h1 class="reveal reveal-delay-1" data-i18n="hero.title" data-i18n-html="true">
           Productos digitales que<br><em>realmente funcionan.</em>
         </h1>
-        <p class="hero-sub reveal reveal-delay-2">
-          Somos un estudio boutique de dos ingenieros con experiencia enterprise. 
-          No somos una agencia enorme ni freelancers que desaparecen. <strong style="color: var(--text-primary)">Construimos, entregamos y seguimos ahí.</strong>
+        <p class="hero-sub reveal reveal-delay-2" data-i18n="hero.sub" data-i18n-html="true">
+          Somos un estudio boutique de dos ingenieros con experiencia enterprise.
+          No somos una agencia enorme ni freelancers que desaparecen. <strong
+            style="color: var(--text-primary)">Construimos, entregamos y seguimos ahí.</strong>
         </p>
         <div class="hero-actions reveal reveal-delay-3">
           <a href="#contacto" class="btn-primary">
-            Hablemos
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <span data-i18n="hero.cta">Hablemos</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
           </a>
-          <a href="#servicios" class="btn-secondary">Ver servicios</a>
+          <a href="#servicios" class="btn-secondary" data-i18n="hero.secondary">Ver servicios</a>
         </div>
       </div>
       <div class="hero-metrics reveal reveal-delay-4">
         <div class="metric">
           <h3>8<span>+</span></h3>
-          <p>Años combinados</p>
+          <p data-i18n="hero.metric1">Años combinados</p>
         </div>
         <div class="metric">
           <h3>Enterprise</h3>
@@ -976,7 +1064,7 @@
         </div>
         <div class="metric">
           <h3>Full<span>-</span>Stack</h3>
-          <p>Cobertura completa</p>
+          <p data-i18n="hero.metric3">Cobertura completa</p>
         </div>
       </div>
     </div>
@@ -985,8 +1073,14 @@
   <!-- ========== MARQUEE ========== -->
   <div class="marquee-section">
     <div class="marquee-track">
-      <div class="marquee-item">React <span>◆</span> TypeScript <span>◆</span> Node.js <span>◆</span> Next.js <span>◆</span> PostgreSQL <span>◆</span> APIs <span>◆</span> AWS <span>◆</span> Redux <span>◆</span> Playwright <span>◆</span> React Native</div>
-      <div class="marquee-item">React <span>◆</span> TypeScript <span>◆</span> Node.js <span>◆</span> Next.js <span>◆</span> PostgreSQL <span>◆</span> APIs <span>◆</span> AWS <span>◆</span> Redux <span>◆</span> Playwright <span>◆</span> React Native</div>
+      <div class="marquee-item">React <span>◆</span> TypeScript <span>◆</span> Node.js <span>◆</span> Next.js
+        <span>◆</span> PostgreSQL <span>◆</span> APIs <span>◆</span> AWS <span>◆</span> Redux <span>◆</span> Playwright
+        <span>◆</span> React Native
+      </div>
+      <div class="marquee-item">React <span>◆</span> TypeScript <span>◆</span> Node.js <span>◆</span> Next.js
+        <span>◆</span> PostgreSQL <span>◆</span> APIs <span>◆</span> AWS <span>◆</span> Redux <span>◆</span> Playwright
+        <span>◆</span> React Native
+      </div>
     </div>
   </div>
 
@@ -994,52 +1088,81 @@
   <section class="services" id="servicios">
     <div class="container">
       <div class="services-header">
-        <div class="section-label reveal">Servicios</div>
-        <h2 class="section-title reveal reveal-delay-1">Todo lo que necesitás <br>para salir al mercado.</h2>
-        <p class="section-desc reveal reveal-delay-2">Desde la idea hasta producción. Sin intermediarios, sin meetings innecesarias. Código limpio, entrega real.</p>
+        <div class="section-label reveal" data-i18n="services.label">Servicios</div>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="services.title" data-i18n-html="true">Todo lo que
+          necesitás <br>para salir al mercado.</h2>
+        <p class="section-desc reveal reveal-delay-2" data-i18n="services.desc">Desde la idea hasta producción. Sin
+          intermediarios, sin meetings innecesarias. Código limpio, entrega real.</p>
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M9 21V9" />
+            </svg>
           </div>
-          <h3>Sitios Web & Landing Pages</h3>
-          <p>Páginas que convierten. Diseño a medida, performance optimizado, SEO listo. Nada de templates.</p>
+          <h3 data-i18n="services.s1.title">Sitios Web & Landing Pages</h3>
+          <p data-i18n="services.s1.desc">Páginas que convierten. Diseño a medida, performance optimizado, SEO listo.
+            Nada de templates.</p>
         </div>
         <div class="service-card reveal reveal-delay-1">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8" />
+              <path d="M12 17v4" />
+            </svg>
           </div>
-          <h3>Aplicaciones Web</h3>
-          <p>SaaS, dashboards, herramientas internas. Interfaces que los usuarios aman usar, con arquitectura que escala.</p>
+          <h3 data-i18n="services.s2.title">Aplicaciones Web</h3>
+          <p data-i18n="services.s2.desc">SaaS, dashboards, herramientas internas. Interfaces que los usuarios aman
+            usar, con arquitectura que escala.</p>
         </div>
         <div class="service-card reveal reveal-delay-2">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+              <line x1="4" y1="22" x2="4" y2="15" />
+            </svg>
           </div>
-          <h3>APIs & Integraciones</h3>
-          <p>Conectamos tus sistemas. Automatizamos flujos. APIs robustas, integraciones con terceros, webhooks.</p>
+          <h3 data-i18n="services.s3.title">APIs & Integraciones</h3>
+          <p data-i18n="services.s3.desc">Conectamos tus sistemas. Automatizamos flujos. APIs robustas, integraciones
+            con terceros, webhooks.</p>
         </div>
         <div class="service-card reveal reveal-delay-1">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <svg viewBox="0 0 24 24">
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <path d="M12 18h.01" />
+            </svg>
           </div>
-          <h3>Experiencias Mobile</h3>
-          <p>Apps y PWAs que funcionan impecable en cualquier dispositivo. Responsive no es opcional — es el estándar.</p>
+          <h3 data-i18n="services.s4.title">Experiencias Mobile</h3>
+          <p data-i18n="services.s4.desc">Apps y PWAs que funcionan impecable en cualquier dispositivo. Responsive no es
+            opcional — es el estándar.</p>
         </div>
         <div class="service-card reveal reveal-delay-2">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
           </div>
-          <h3>Consultoría Técnica</h3>
-          <p>¿Tenés un equipo pero necesitás dirección? Revisamos arquitectura, code reviews, o planificamos tu roadmap técnico.</p>
+          <h3 data-i18n="services.s5.title">Consultoría Técnica</h3>
+          <p data-i18n="services.s5.desc">¿Tenés un equipo pero necesitás dirección? Revisamos arquitectura, code
+            reviews, o planificamos tu roadmap técnico.</p>
         </div>
         <div class="service-card reveal reveal-delay-3">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
           </div>
-          <h3>Desarrollo a Medida</h3>
-          <p>Si no entra en una categoría, mejor. Los proyectos más interesantes son los que nadie más quiere tomar.</p>
+          <h3 data-i18n="services.s6.title">Desarrollo a Medida</h3>
+          <p data-i18n="services.s6.desc">Si no entra en una categoría, mejor. Los proyectos más interesantes son los
+            que nadie más quiere tomar.</p>
         </div>
       </div>
     </div>
@@ -1050,132 +1173,88 @@
     <div class="container">
       <div class="why-us-layout">
         <div class="why-us-left">
-          <div class="section-label reveal">Por qué nosotros</div>
-          <h2 class="section-title reveal reveal-delay-1">No somos una agencia.<br>No somos freelancers.<br><em style="font-family: var(--font-heading); color: var(--accent); font-style: italic;">Somos algo mejor.</em></h2>
-          <p class="section-desc reveal reveal-delay-2">Leandro pasó 4 años en JPMorgan Chase construyendo UIs enterprise. Julio llevó productos de cero a producción en múltiples empresas. Ahora, esa misma calidad trabaja para vos.</p>
+          <div class="section-label reveal" data-i18n="why.label">Por qué nosotros</div>
+          <h2 class="section-title reveal reveal-delay-1" data-i18n="why.title" data-i18n-html="true">No somos una
+            agencia.<br>No somos freelancers.<br><em
+              style="font-family: var(--font-heading); color: var(--accent); font-style: italic;">Somos algo mejor.</em>
+          </h2>
+          <p class="section-desc reveal reveal-delay-2" data-i18n="why.desc">Leandro pasó 4 años en JPMorgan Chase
+            construyendo UIs enterprise. Julio llevó productos de cero a producción en múltiples empresas. Ahora, esa
+            misma calidad trabaja para vos.</p>
         </div>
         <div class="why-us-right">
           <div class="diff-item reveal">
             <span class="diff-number">01</span>
-            <h3>Experiencia Enterprise, Velocidad Startup</h3>
-            <p>Sabemos lo que es trabajar en sistemas que usan millones de personas. Pero no necesitamos 6 meses y 14 reuniones para hacer un deploy.</p>
+            <h3 data-i18n="why.d1.title">Experiencia Enterprise, Velocidad Startup</h3>
+            <p data-i18n="why.d1.desc">Sabemos lo que es trabajar en sistemas que usan millones de personas. Pero no
+              necesitamos 6 meses y 14 reuniones para hacer un deploy.</p>
           </div>
           <div class="diff-item reveal reveal-delay-1">
             <span class="diff-number">02</span>
-            <h3>Full-Stack Real</h3>
-            <p>Frontend, backend, infraestructura, CI/CD. No subcontratamos, no delegamos. Cada línea de código es nuestra.</p>
+            <h3 data-i18n="why.d2.title">Full-Stack Real</h3>
+            <p data-i18n="why.d2.desc">Frontend, backend, infraestructura, CI/CD. No subcontratamos, no delegamos. Cada
+              línea de código es nuestra.</p>
           </div>
           <div class="diff-item reveal reveal-delay-2">
             <span class="diff-number">03</span>
-            <h3>Comunicación Directa</h3>
-            <p>Hablás con los que escriben el código. Sin project managers intermedios, sin juegos de teléfono descompuesto. Tu feedback llega al commit en horas.</p>
+            <h3 data-i18n="why.d3.title">Comunicación Directa</h3>
+            <p data-i18n="why.d3.desc">Hablás con los que escriben el código. Sin project managers intermedios, sin
+              juegos de teléfono descompuesto. Tu feedback llega al commit en horas.</p>
           </div>
           <div class="diff-item reveal reveal-delay-3">
             <span class="diff-number">04</span>
-            <h3>Entregamos. En Serio.</h3>
-            <p>No desaparecemos a mitad de proyecto. No inflamos timelines. Nos importa tu producto tanto como a vos — porque nuestra reputación depende de eso.</p>
+            <h3 data-i18n="why.d4.title">Entregamos. En Serio.</h3>
+            <p data-i18n="why.d4.desc">No desaparecemos a mitad de proyecto. No inflamos timelines. Nos importa tu
+              producto tanto como a vos — porque nuestra reputación depende de eso.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== SOCIAL PROOF ========== -->
-  <section class="social-proof" id="testimonios">
-    <div class="container">
-      <div class="section-label reveal">Lo que dicen de nosotros</div>
-      <h2 class="section-title reveal reveal-delay-1">Clientes que confían<br>y vuelven.</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <blockquote>"Necesitábamos una plataforma en 6 semanas. La entregaron en 5, y funcionaba mejor de lo que esperábamos. Son directos, rápidos, y el código es impecable."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MC</div>
-            <div>
-              <div class="testimonial-name">Martín Castellano</div>
-              <div class="testimonial-role">CTO, Fintech Startup — Buenos Aires</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-1">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <blockquote>"Lo mejor es que hablás directamente con ellos. Sin intermediarios, sin esperar 3 días por una respuesta. Profesionalismo de multinacional con la agilidad de un equipo chico."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SR</div>
-            <div>
-              <div class="testimonial-name">Sofía Ramírez</div>
-              <div class="testimonial-role">Fundadora, E-commerce — Madrid</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <blockquote>"Nos armaron un sistema de gestión interno que le ahorró al equipo 15 horas por semana. Entienden el negocio, no solo el código."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">DV</div>
-            <div>
-              <div class="testimonial-name">Diego Varela</div>
-              <div class="testimonial-role">Director de Operaciones, Logística — CDMX</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ========== PROCESS ========== -->
   <section class="process" id="proceso">
     <div class="container">
       <div class="process-header">
-        <div class="section-label reveal">Proceso</div>
-        <h2 class="section-title reveal reveal-delay-1">De la idea al deploy,<br>sin drama.</h2>
-        <p class="section-desc reveal reveal-delay-2">Cuatro pasos claros. Sin sorpresas, sin scope creep. Sabés exactamente qué va a pasar y cuándo.</p>
+        <div class="section-label reveal" data-i18n="process.label">Proceso</div>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="process.title" data-i18n-html="true">De la idea al
+          deploy,<br>sin drama.</h2>
+        <p class="section-desc reveal reveal-delay-2" data-i18n="process.desc">Cuatro pasos claros. Sin sorpresas, sin
+          scope creep. Sabés exactamente qué va a pasar y cuándo.</p>
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
           <div class="step-number">01</div>
           <div>
-            <h3>Discovery</h3>
-            <p>Entendemos tu negocio, tus usuarios, tu visión. Definimos alcance, tech stack y timeline.</p>
+            <h3 data-i18n="process.s1.title">Discovery</h3>
+            <p data-i18n="process.s1.desc">Entendemos tu negocio, tus usuarios, tu visión. Definimos alcance, tech stack
+              y timeline.</p>
           </div>
         </div>
         <div class="process-step reveal reveal-delay-1">
           <div class="step-number">02</div>
           <div>
-            <h3>Diseño</h3>
-            <p>Wireframes, prototipos, UI. Iteramos rápido hasta que el producto se sienta perfecto.</p>
+            <h3 data-i18n="process.s2.title">Diseño</h3>
+            <p data-i18n="process.s2.desc">Wireframes, prototipos, UI. Iteramos rápido hasta que el producto se sienta
+              perfecto.</p>
           </div>
         </div>
         <div class="process-step reveal reveal-delay-2">
           <div class="step-number">03</div>
           <div>
-            <h3>Desarrollo</h3>
-            <p>Sprints cortos, entregas frecuentes. Ves progreso real cada semana, no excusas.</p>
+            <h3 data-i18n="process.s3.title">Desarrollo</h3>
+            <p data-i18n="process.s3.desc">Sprints cortos, entregas frecuentes. Ves progreso real cada semana, no
+              excusas.</p>
           </div>
         </div>
         <div class="process-step reveal reveal-delay-3">
           <div class="step-number">04</div>
           <div>
-            <h3>Launch & Soporte</h3>
-            <p>Deploy a producción, monitoreo, y soporte post-launch. No te dejamos solo después de entregar.</p>
+            <h3 data-i18n="process.s4.title">Launch & Soporte</h3>
+            <p data-i18n="process.s4.desc">Deploy a producción, monitoreo, y soporte post-launch. No te dejamos solo
+              después de entregar.</p>
           </div>
         </div>
       </div>
@@ -1187,35 +1266,37 @@
     <div class="container">
       <div class="contact-layout">
         <div class="contact-left">
-          <div class="section-label reveal">Contacto</div>
-          <h2 class="section-title reveal reveal-delay-1">¿Tenés un proyecto<br>en mente? <em style="font-family: var(--font-heading); color: var(--accent); font-style: italic;">Hablemos.</em></h2>
-          <p class="section-desc reveal reveal-delay-2">Contanos qué necesitás y te respondemos en menos de 24 horas. Sin compromiso, sin bullshit. Solo una conversación honesta.</p>
+          <div class="section-label reveal" data-i18n="contact.label">Contacto</div>
+          <h2 class="section-title reveal reveal-delay-1" data-i18n="contact.title" data-i18n-html="true">¿Tenés un
+            proyecto<br>en mente? <em
+              style="font-family: var(--font-heading); color: var(--accent); font-style: italic;">Hablemos.</em></h2>
+          <p class="section-desc reveal reveal-delay-2" data-i18n="contact.desc">Contanos qué necesitás y te respondemos
+            en menos de 24 horas. Sin compromiso, sin bullshit. Solo una conversación honesta.</p>
           <div class="contact-info reveal reveal-delay-3">
             <div class="contact-info-item">
               <div class="contact-info-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
               </div>
               <div class="contact-info-text">
                 <span>Email</span>
-                <a href="mailto:hola@leandroyjulio.dev">hola@leandroyjulio.dev</a>
+                <a href="mailto:julidechert@gmail.com">julidechert@gmail.com</a>
               </div>
             </div>
             <div class="contact-info-item">
               <div class="contact-info-icon">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
               </div>
               <div class="contact-info-text">
-                <span>Ubicación</span>
-                <p>Remoto — LATAM & España</p>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">
-                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div class="contact-info-text">
-                <span>WhatsApp</span>
-                <a href="#">+54 9 11 XXXX-XXXX</a>
+                <span data-i18n="contact.location.label">Ubicación</span>
+                <p data-i18n="contact.location.value">Remoto</p>
               </div>
             </div>
           </div>
@@ -1223,18 +1304,21 @@
         <div class="contact-right reveal reveal-delay-2">
           <form class="contact-form" id="contactForm">
             <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" placeholder="Tu nombre o el de tu empresa" required>
+              <label for="name" data-i18n="contact.form.name">Nombre</label>
+              <input type="text" id="name" name="name" data-i18n-placeholder="contact.form.namePh"
+                placeholder="Tu nombre o el de tu empresa" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="tu@email.com" required>
             </div>
             <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" placeholder="Contanos sobre tu proyecto — qué necesitás, timeline, presupuesto estimado..." required></textarea>
+              <label for="message" data-i18n="contact.form.message">Mensaje</label>
+              <textarea id="message" name="message" data-i18n-placeholder="contact.form.messagePh"
+                placeholder="Contanos sobre tu proyecto — qué necesitás, timeline, presupuesto estimado..."
+                required></textarea>
             </div>
-            <button type="submit" class="form-submit">Enviar mensaje</button>
+            <button type="submit" class="form-submit" data-i18n="contact.form.submit">Enviar mensaje</button>
           </form>
         </div>
       </div>
@@ -1245,12 +1329,13 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-left">
-        &copy; 2026 L<span>&</span>J Studio. Construido con café y commits limpios.
+        <span data-i18n="footer.copy" data-i18n-html="true">&copy; 2026 L<span>&</span>J Studio. Construido con café y
+          commits limpios.</span>
       </div>
       <div class="footer-right">
-        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:hola@leandroyjulio.dev">Email</a>
+        <a href="https://www.linkedin.com/in/lb0" target="_blank" rel="noopener">Leandro — LinkedIn</a>
+        <a href="https://www.linkedin.com/in/jld1/" target="_blank" rel="noopener">Julio — LinkedIn</a>
+        <a href="mailto:julidechert@gmail.com">Email</a>
       </div>
     </div>
   </footer>
@@ -1315,7 +1400,7 @@
       e.preventDefault();
       const btn = form.querySelector('.form-submit');
       const originalText = btn.textContent;
-      btn.textContent = '¡Mensaje enviado! ✓';
+      btn.textContent = currentLang === 'es' ? '¡Mensaje enviado! ✓' : 'Message sent! ✓';
       btn.style.background = '#22c55e';
       setTimeout(() => {
         btn.textContent = originalText;
@@ -1336,6 +1421,126 @@
         btn.style.transform = '';
       });
     });
+
+    /* ========== i18n LANGUAGE SWITCHER ========== */
+    const translations = {
+      en: {
+        'nav.services': 'Services',
+        'nav.about': 'About Us',
+        'nav.process': 'Process',
+        'nav.contact': 'Contact',
+        'nav.cta': "Let's Talk",
+        'hero.badge': 'Available for Q2 2026 projects',
+        'hero.title': 'Digital products that<br><em>actually work.</em>',
+        'hero.sub': 'We\'re a boutique studio of two engineers with enterprise experience. Not a huge agency, not freelancers who vanish. <strong style="color: var(--text-primary)">We build, we deliver, and we stick around.</strong>',
+        'hero.cta': "Let's Talk",
+        'hero.secondary': 'See services',
+        'hero.metric1': 'Combined years',
+        'hero.metric3': 'Full coverage',
+        'services.label': 'Services',
+        'services.title': 'Everything you need<br>to go to market.',
+        'services.desc': 'From idea to production. No middlemen, no unnecessary meetings. Clean code, real delivery.',
+        'services.s1.title': 'Websites & Landing Pages',
+        'services.s1.desc': 'Pages that convert. Custom design, optimized performance, SEO ready. No templates.',
+        'services.s2.title': 'Web Applications',
+        'services.s2.desc': 'SaaS, dashboards, internal tools. Interfaces users love to use, with architecture that scales.',
+        'services.s3.title': 'APIs & Integrations',
+        'services.s3.desc': 'We connect your systems. Automate workflows. Robust APIs, third-party integrations, webhooks.',
+        'services.s4.title': 'Mobile Experiences',
+        'services.s4.desc': "Apps and PWAs that work flawlessly on any device. Responsive isn't optional — it's the standard.",
+        'services.s5.title': 'Technical Consulting',
+        'services.s5.desc': 'Have a team but need direction? We review architecture, do code reviews, or plan your technical roadmap.',
+        'services.s6.title': 'Custom Development',
+        'services.s6.desc': "If it doesn't fit in a category, even better. The most interesting projects are the ones nobody else wants to take on.",
+        'why.label': 'Why Us',
+        'why.title': 'Not an agency.<br>Not freelancers.<br><em style="font-family: var(--font-heading); color: var(--accent); font-style: italic;">Something better.</em>',
+        'why.desc': 'Leandro spent 4 years at JPMorgan Chase building enterprise UIs. Julio took products from zero to production across multiple companies. Now, that same quality works for you.',
+        'why.d1.title': 'Enterprise Experience, Startup Speed',
+        'why.d1.desc': "We know what it's like to work on systems used by millions. But we don't need 6 months and 14 meetings to deploy.",
+        'why.d2.title': 'Truly Full-Stack',
+        'why.d2.desc': "Frontend, backend, infrastructure, CI/CD. We don't subcontract, we don't delegate. Every line of code is ours.",
+        'why.d3.title': 'Direct Communication',
+        'why.d3.desc': 'You talk to the people who write the code. No project managers in between, no telephone game. Your feedback hits the commit in hours.',
+        'why.d4.title': 'We Actually Ship.',
+        'why.d4.desc': "We don't disappear mid-project. We don't inflate timelines. We care about your product as much as you do — because our reputation depends on it.",
+        'process.label': 'Process',
+        'process.title': 'From idea to deploy,<br>no drama.',
+        'process.desc': "Four clear steps. No surprises, no scope creep. You know exactly what's going to happen and when.",
+        'process.s1.title': 'Discovery',
+        'process.s1.desc': 'We understand your business, your users, your vision. We define scope, tech stack, and timeline.',
+        'process.s2.title': 'Design',
+        'process.s2.desc': 'Wireframes, prototypes, UI. We iterate fast until the product feels perfect.',
+        'process.s3.title': 'Development',
+        'process.s3.desc': 'Short sprints, frequent deliveries. You see real progress every week, not excuses.',
+        'process.s4.title': 'Launch & Support',
+        'process.s4.desc': "Deploy to production, monitoring, and post-launch support. We don't leave you alone after delivery.",
+        'contact.label': 'Contact',
+        'contact.title': 'Have a project<br>in mind? <em style="font-family: var(--font-heading); color: var(--accent); font-style: italic;">Let\'s talk.</em>',
+        'contact.desc': "Tell us what you need and we'll respond within 24 hours. No strings attached, no BS. Just an honest conversation.",
+        'contact.location.label': 'Location',
+        'contact.location.value': 'Remote',
+        'contact.form.name': 'Name',
+        'contact.form.namePh': 'Your name or your company name',
+        'contact.form.message': 'Message',
+        'contact.form.messagePh': 'Tell us about your project — what you need, timeline, estimated budget...',
+        'contact.form.submit': 'Send message',
+        'footer.copy': '&copy; 2026 L<span>&</span>J Studio. Built with coffee and clean commits.',
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'es';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+      if (lang === 'es') {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          // Restore original Spanish content stored on first run
+          if (el._originalES) {
+            if (el.hasAttribute('data-i18n-html')) el.innerHTML = el._originalES;
+            else el.textContent = el._originalES;
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          if (el._originalPlaceholderES) el.placeholder = el._originalPlaceholderES;
+        });
+      } else {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const val = translations.en[key];
+          if (val) {
+            if (el.hasAttribute('data-i18n-html')) el.innerHTML = val;
+            else el.textContent = val;
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          const val = translations.en[key];
+          if (val) el.placeholder = val;
+        });
+      }
+    }
+
+    // Store original Spanish text
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el._originalES = el.hasAttribute('data-i18n-html') ? el.innerHTML : el.textContent;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      el._originalPlaceholderES = el.placeholder;
+    });
+
+    // Bind switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+
+    // Apply saved language on load
+    if (currentLang !== 'es') setLang(currentLang);
   </script>
 </body>
+
 </html>
